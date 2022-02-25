@@ -1,0 +1,5688 @@
+
+<!doctype html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Energy Data Explorer - Our World in Data</title><meta name="description" content="Research and data to make progress against the world’s largest problems"/><link rel="canonical" href="https://ourworldindata.org/energy"/><link rel="alternate" type="application/atom+xml" href="/atom.xml"/><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/><meta property="fb:app_id" content="1149943818390250"/><meta property="og:url" content="https://ourworldindata.org/energy"/><meta property="og:title" content="Energy Data Explorer"/><meta property="og:description" content="Research and data to make progress against the world’s largest problems"/><meta property="og:image" content="https://ourworldindata.org/default-thumbnail.jpg"/><meta property="og:site_name" content="Our World in Data"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@OurWorldInData"/><meta name="twitter:creator" content="@OurWorldInData"/><meta name="twitter:title" content="Energy Data Explorer"/><meta name="twitter:description" content="Research and data to make progress against the world’s largest problems"/><meta name="twitter:image" content="https://ourworldindata.org/default-thumbnail.jpg"/><link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i|Playfair+Display:400,700&amp;display=swap" rel="stylesheet"/><link rel="stylesheet" href="https://ourworldindata.org/assets/commons.css"/><link rel="stylesheet" href="https://ourworldindata.org/assets/owid.css"/><script>if (window != window.top) document.documentElement.classList.add('IsInIframe')</script><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N2D4V8S');</script>
+<!-- End Google Tag Manager --></head><body class="StandaloneGrapherOrExplorerPage"><header class="site-header"><div class="wrapper site-navigation-bar"><div class="site-logo"><a href="/">Our World<br/> in Data</a></div><nav class="site-navigation"><div class="topics-button-wrapper"><a href="/#entries" class="topics-button"><div class="label">Articles <br/><strong>by topic</strong></div><div class="icon"><svg width="12" height="6"><path d="M0,0 L12,0 L6,6 Z" fill="currentColor"></path></svg></div></a></div><div><div class="site-primary-navigation"><form class="HeaderSearch" action="/search" method="GET"><input type="search" name="q" placeholder="Search..."/><div class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></div></form><ul class="site-primary-links"><li><a href="/blog" data-track-note="header-navigation">Latest</a></li><li><a href="/about" data-track-note="header-navigation">About</a></li><li><a href="/donate" data-track-note="header-navigation">Donate</a></li></ul></div><div class="site-secondary-navigation"><ul class="site-secondary-links"><li><a href="/charts" data-track-note="header-navigation">All charts</a></li><li><a href="https://sdg-tracker.org" data-track-note="header-navigation">Sustainable Development Goals Tracker</a></li></ul></div></div></nav><div class="header-logos-wrapper"><a href="https://www.oxfordmartin.ox.ac.uk/global-development" class="oxford-logo"><img src="https://ourworldindata.org/oms-logo.svg" alt="Oxford Martin School logo"/></a><a href="https://global-change-data-lab.org/" class="gcdl-logo"><img src="https://ourworldindata.org/gcdl-logo.svg" alt="Global Change Data Lab logo"/></a></div><div class="mobile-site-navigation"><button data-track-note="mobile-search-button"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></button><button data-track-note="mobile-newsletter-button"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open-text" class="svg-inline--fa fa-envelope-open-text fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M176 216h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16H176c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16zm-16 80c0 8.84 7.16 16 16 16h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16H176c-8.84 0-16 7.16-16 16v16zm96 121.13c-16.42 0-32.84-5.06-46.86-15.19L0 250.86V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V250.86L302.86 401.94c-14.02 10.12-30.44 15.19-46.86 15.19zm237.61-254.18c-8.85-6.94-17.24-13.47-29.61-22.81V96c0-26.51-21.49-48-48-48h-77.55c-3.04-2.2-5.87-4.26-9.04-6.56C312.6 29.17 279.2-.35 256 0c-23.2-.35-56.59 29.17-73.41 41.44-3.17 2.3-6 4.36-9.04 6.56H96c-26.51 0-48 21.49-48 48v44.14c-12.37 9.33-20.76 15.87-29.61 22.81A47.995 47.995 0 0 0 0 200.72v10.65l96 69.35V96h320v184.72l96-69.35v-10.65c0-14.74-6.78-28.67-18.39-37.77z"></path></svg></button><button data-track-note="mobile-hamburger-button"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></button></div></div></header><div class="alert-banner"><div class="content"><div class="text"><strong>Updated daily</strong></div><a href="/covid-vaccinations" data-track-note="covid-banner-click">View our work on COVID-19 vaccinations</a></div></div><div class="offset-subnavigation"><div class="site-subnavigation"><div class="site-subnavigation-scroll"><ul class="site-subnavigation-links"><li class="highlight"><a href="/energy" data-track-note="energy-subnav-energy">Energy<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg></a></li><li class=""><a href="/energy#country-profiles" data-track-note="energy-subnav-by-country">By country</a></li><li class="current"><a href="/explorers/energy" data-track-note="energy-subnav-energy-data-explorer">Data explorer</a></li><li class=""><a href="/energy-access" data-track-note="energy-subnav-energy-access">Energy access</a></li><li class=""><a href="/energy-production-consumption" data-track-note="energy-subnav-production-consumption">Production &amp; Consumption</a></li><li class=""><a href="/energy-mix" data-track-note="energy-subnav-energy-mix">Energy mix</a></li><li class=""><a href="/electricity-mix" data-track-note="energy-subnav-electricity-mix">Electricity mix</a></li><li class=""><a href="/fossil-fuels" data-track-note="energy-subnav-fossil-fuels">Fossil fuels</a></li><li class=""><a href="/renewable-energy" data-track-note="energy-subnav-renewable-energy">Renewables</a></li><li class=""><a href="/nuclear-energy" data-track-note="energy-subnav-nuclear-energy">Nuclear</a></li><li class=""><a href="/transport" data-track-note="energy-subnav-transport">Transport</a></li></ul></div></div></div><main id="ExplorerContainer"><div class="loading-indicator"><span style="border-color:#333"></span></div></main><section class="donate-footer"><div class="wrapper"><div class="owid-row flex-align-center"><div class="owid-col owid-col--lg-3 owid-padding-bottom--sm-3"><p>Our World in Data is free and accessible for everyone.</p><p>Help us do this work by making a donation.</p></div><div class="owid-col owid-col--lg-1"><a href="/donate" class="owid-button donate-button" data-track-note="donate-footer"><span class="label">Donate now</span><span class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right fa-w-8 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></span></a></div></div></div></section><footer class="site-footer"><div class="wrapper"><div class="owid-row"><div class="owid-col owid-col--lg-1"><ul><li><a href="/about" data-track-note="footer-navigation">About</a></li><li><a href="/about#contact" data-track-note="footer-navigation">Contact</a></li><li><a href="/feedback" data-track-note="footer-navigation">Feedback</a></li><li><a href="/jobs" data-track-note="footer-navigation">Jobs</a></li><li><a href="/funding" data-track-note="footer-navigation">Funding</a></li><li><a href="/about/how-to-use-our-world-in-data" data-track-note="footer-navigation">How to use</a></li><li><a href="/donate" data-track-note="footer-navigation">Donate</a></li><li><a href="/privacy-policy" data-track-note="footer-navigation">Privacy policy</a></li></ul></div><div class="owid-col owid-col--lg-1"><ul><li><a href="/blog" data-track-note="footer-navigation">Latest publications</a></li><li><a href="/charts" data-track-note="footer-navigation">All charts</a></li></ul><ul><li><a href="https://twitter.com/OurWorldInData" data-track-note="footer-navigation">Twitter</a></li><li><a href="https://www.facebook.com/OurWorldinData" data-track-note="footer-navigation">Facebook</a></li><li><a href="https://github.com/owid" data-track-note="footer-navigation">GitHub</a></li><li><a href="/feed" data-track-note="footer-navigation">RSS Feed</a></li></ul></div><div class="owid-col owid-col--lg-1"><div class="logos"><a href="https://www.oxfordmartin.ox.ac.uk/research/programmes/global-development" class="partner-logo" data-track-note="footer-navigation"><img src="https://ourworldindata.org/oms-logo.svg" alt="Oxford Martin School logo" loading="lazy"/></a><a href="/owid-at-ycombinator" class="partner-logo" data-track-note="footer-navigation"><img src="https://ourworldindata.org/yc-logo.png" alt="Y Combinator logo" loading="lazy"/></a></div></div><div class="owid-col flex-2"><div class="legal"><p>License: All the material produced by Our World in Data, including interactive visualizations and code, are completely open access under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons BY license</a>. You have the permission to use, distribute, and reproduce these in any medium, provided the source and authors are credited. All other material, including data produced by third parties and made available by Our World in Data, is subject to the license terms from the original third-party authors.</p><p>Please consult our full <a href="/about#legal">legal disclaimer</a>.</p><p><a href="https://global-change-data-lab.org/" class="partner-logo gcdl-logo" data-track-note="footer-navigation"><img src="https://ourworldindata.org/gcdl-logo.svg" alt="Global Change Data Lab logo" loading="lazy"/></a>Our World In Data is a project of the <a href="https://global-change-data-lab.org/">Global Change Data Lab</a>, a registered charity in England and Wales (Charity Number 1186433).</p></div></div></div></div><div class="site-tools"></div><script src="https://polyfill.io/v3/polyfill.min.js?features=es6,fetch,URL,IntersectionObserver,IntersectionObserverEntry"></script><script src="https://ourworldindata.org/assets/commons.js"></script><script src="https://ourworldindata.org/assets/vendors.js"></script><script src="https://ourworldindata.org/assets/owid.js"></script><script>window.runSiteFooterScripts()</script></footer><script>const explorerProgram = 
+//EMBEDDED_EXPLORER
+{
+  "program": "explorerTitle\tEnergy Data Explorer\nisPublished\ttrue\nexplorerSubtitle\tDownload the complete <i>Our World in Data</i> <a href=\"https://github.com/owid/energy-data\">Energy Dataset</a>.\nselection\tUnited States\tUnited Kingdom\tChina\tWorld\tIndia\tBrazil\tSouth Africa\nsubNavId\tenergy\nsubNavCurrentId\tenergy-data-explorer\ngraphers\n\tgrapherId\tTotal or Breakdown Radio\tSelect a source Dropdown\tEnergy or Electricity Radio\tMetric Dropdown\n\t3868\tTotal\t\tPrimary energy\tAnnual consumption\n\t586\tTotal\t\tPrimary energy\tPer capita consumption\n\t4287\tTotal\t\tPrimary energy\tRel. change from previous year\n\t4288\tTotal\t\tPrimary energy\tAbs. change from previous year\n\t4289\tTotal\t\tElectricity only\tAnnual generation\n\t737\tTotal\t\tElectricity only\tPer capita generation\n\t4449\tSelect a source\tFossil fuels\tPrimary energy\tAnnual consumption\n\t4434\tSelect a source\tFossil fuels\tPrimary energy\tPer capita consumption\n\t4293\tSelect a source\tFossil fuels\tPrimary energy\tShare of total\n\t4394\tSelect a source\tFossil fuels\tPrimary energy\tRel. change from previous year\n\t4393\tSelect a source\tFossil fuels\tPrimary energy\tAbs. change from previous year\n\t4443\tSelect a source\tFossil fuels\tElectricity only\tAnnual generation\n\t4453\tSelect a source\tFossil fuels\tElectricity only\tPer capita generation\n\t4325\tSelect a source\tFossil fuels\tElectricity only\tShare of total generation\n\t1377\tSelect a source\tCoal\tPrimary energy\tAnnual consumption\n\t1385\tSelect a source\tCoal\tPrimary energy\tPer capita consumption\n\t4290\tSelect a source\tCoal\tPrimary energy\tShare of total\n\t4388\tSelect a source\tCoal\tPrimary energy\tRel. change from previous year\n\t4387\tSelect a source\tCoal\tPrimary energy\tAbs. change from previous year\n\t4444\tSelect a source\tCoal\tElectricity only\tAnnual generation\n\t4451\tSelect a source\tCoal\tElectricity only\tPer capita generation\n\t4319\tSelect a source\tCoal\tElectricity only\tShare of total\n\t1380\tSelect a source\tOil\tPrimary energy\tAnnual consumption\n\t4376\tSelect a source\tOil\tPrimary energy\tPer capita consumption\n\t4291\tSelect a source\tOil\tPrimary energy\tShare of total\n\t4390\tSelect a source\tOil\tPrimary energy\tRel. change from previous year\n\t4389\tSelect a source\tOil\tPrimary energy\tAbs. change from previous year\n\t4445\tSelect a source\tOil\tElectricity only\tAnnual generation\n\t4452\tSelect a source\tOil\tElectricity only\tPer capita generation\n\t4435\tSelect a source\tOil\tElectricity only\tShare of total\n\t1382\tSelect a source\tGas\tPrimary energy\tAnnual consumption\n\t4377\tSelect a source\tGas\tPrimary energy\tPer capita consumption\n\t4292\tSelect a source\tGas\tPrimary energy\tShare of total\n\t4392\tSelect a source\tGas\tPrimary energy\tRel. change from previous year\n\t4391\tSelect a source\tGas\tPrimary energy\tAbs. change from previous year\n\t4446\tSelect a source\tGas\tElectricity only\tAnnual generation\n\t4454\tSelect a source\tGas\tElectricity only\tPer capita generation\n\t4320\tSelect a source\tGas\tElectricity only\tShare of total\n\t4436\tSelect a source\tLow-carbon\tPrimary energy\tAnnual consumption\n\t4383\tSelect a source\tLow-carbon\tPrimary energy\tPer capita consumption\n\t4303\tSelect a source\tLow-carbon\tPrimary energy\tShare of total\n\t4404\tSelect a source\tLow-carbon\tPrimary energy\tRel. change from previous year\n\t4403\tSelect a source\tLow-carbon\tPrimary energy\tAbs. change from previous year\n\t4447\tSelect a source\tLow-carbon\tElectricity only\tAnnual generation\n\t4456\tSelect a source\tLow-carbon\tElectricity only\tPer capita generation\n\t4315\tSelect a source\tLow-carbon\tElectricity only\tShare of total\n\t4437\tSelect a source\tNuclear\tPrimary energy\tAnnual consumption\n\t4382\tSelect a source\tNuclear\tPrimary energy\tPer capita consumption\n\t4294\tSelect a source\tNuclear\tPrimary energy\tShare of total\n\t4386\tSelect a source\tNuclear\tPrimary energy\tRel. change from previous year\n\t4385\tSelect a source\tNuclear\tPrimary energy\tAbs. change from previous year\n\t4309\tSelect a source\tNuclear\tElectricity only\tAnnual generation\n\t4457\tSelect a source\tNuclear\tElectricity only\tPer capita generation\n\t4322\tSelect a source\tNuclear\tElectricity only\tShare of total\n\t4438\tSelect a source\tRenewables\tPrimary energy\tAnnual consumption\n\t4378\tSelect a source\tRenewables\tPrimary energy\tPer capita consumption\n\t4295\tSelect a source\tRenewables\tPrimary energy\tShare of total\n\t4396\tSelect a source\tRenewables\tPrimary energy\tRel. change from previous year\n\t4395\tSelect a source\tRenewables\tPrimary energy\tAbs. change from previous year\n\t4448\tSelect a source\tRenewables\tElectricity only\tAnnual generation\n\t4455\tSelect a source\tRenewables\tElectricity only\tPer capita generation\n\t4326\tSelect a source\tRenewables\tElectricity only\tShare of total\n\t4439\tSelect a source\tHydropower\tPrimary energy\tAnnual consumption\n\t4379\tSelect a source\tHydropower\tPrimary energy\tPer capita consumption\n\t4296\tSelect a source\tHydropower\tPrimary energy\tShare of total\n\t4398\tSelect a source\tHydropower\tPrimary energy\tRel. change from previous year\n\t4397\tSelect a source\tHydropower\tPrimary energy\tAbs. change from previous year\n\t1419\tSelect a source\tHydropower\tElectricity only\tAnnual generation\n\t4458\tSelect a source\tHydropower\tElectricity only\tPer capita generation\n\t4321\tSelect a source\tHydropower\tElectricity only\tShare of total\n\t4440\tSelect a source\tSolar\tPrimary energy\tAnnual consumption\n\t4381\tSelect a source\tSolar\tPrimary energy\tPer capita consumption\n\t4297\tSelect a source\tSolar\tPrimary energy\tShare of total\n\t4402\tSelect a source\tSolar\tPrimary energy\tRel. change from previous year\n\t4401\tSelect a source\tSolar\tPrimary energy\tAbs. change from previous year\n\t1403\tSelect a source\tSolar\tElectricity only\tAnnual generation\n\t4460\tSelect a source\tSolar\tElectricity only\tPer capita generation\n\t4324\tSelect a source\tSolar\tElectricity only\tShare of total\n\t4441\tSelect a source\tWind\tPrimary energy\tAnnual consumption\n\t4380\tSelect a source\tWind\tPrimary energy\tPer capita consumption\n\t4298\tSelect a source\tWind\tPrimary energy\tShare of total\n\t4400\tSelect a source\tWind\tPrimary energy\tRel. change from previous year\n\t4399\tSelect a source\tWind\tPrimary energy\tAbs. change from previous year\n\t1410\tSelect a source\tWind\tElectricity only\tAnnual generation\n\t4459\tSelect a source\tWind\tElectricity only\tPer capita generation\n\t4323\tSelect a source\tWind\tElectricity only\tShare of total",
+  "slug": "energy",
+  "lastCommit": {
+    "hash": "0b220e50cd5fbc2db9efde604bf9f787c01c18b2",
+    "date": "2021-02-02T13:25:20+00:00",
+    "message": "Remove 'facet' column",
+    "refs": "",
+    "body": "",
+    "author_name": "Daniel Gavrilov",
+    "author_email": "daniel@ourworldindata.org"
+  }
+}
+//EMBEDDED_EXPLORER
+;
+const grapherConfigs = 
+//EMBEDDED_EXPLORER_GRAPHER_CONFIGS
+[
+  {
+    "id": 586,
+    "version": 18,
+    "slug": "per-capita-energy-use",
+    "title": "Energy use per person",
+    "subtitle": "Energy use not only includes electricity, but also other areas of consumption including transport, heating and cooking.\n",
+    "sourceDesc": "Our World in Data based on BP & Shift Data Portal",
+    "note": "Energy refers to primary energy – the energy input before the transformation to forms of energy for end-use (such as electricity or petrol for transport).",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "https://ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2019,
+      "timeTolerance": 3,
+      "colorScale": {
+        "baseColorScheme": "OrRd",
+        "colorSchemeInvert": false,
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          1000,
+          2500,
+          5000,
+          10000,
+          25000,
+          50000,
+          75000,
+          100000
+        ],
+        "customNumericLabels": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "customNumericColorsActive": false,
+        "customNumericColors": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "equalSizeBins": true,
+        "legendDescription": "Energy use per capita (kg oil equivalent)"
+      },
+      "variableId": 143363
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143363,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "India",
+      "Taiwan",
+      "Sweden"
+    ],
+    "selectedEntityIds": [
+      137,
+      198,
+      10
+    ]
+  },
+  {
+    "id": 737,
+    "version": 16,
+    "slug": "per-capita-electricity-consumption",
+    "title": "Per capita electricity consumption",
+    "subtitle": "Average annual electricity consumption per capita, measured in kilowatt-hours (kWh) per year.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "https://ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "PuBuGn",
+        "colorSchemeInvert": false,
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          250,
+          500,
+          750,
+          1000,
+          2000,
+          4000,
+          8000,
+          10000,
+          15000,
+          55000
+        ],
+        "customNumericLabels": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "equalSizeBins": true,
+        "legendDescription": ""
+      },
+      "variableId": 247958
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247958,
+        "display": {
+          "name": "Per capita electricity use",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "United Kingdom",
+      "United States",
+      "India",
+      "China",
+      "Brazil",
+      "Australia",
+      "France",
+      "South Africa"
+    ],
+    "selectedEntityIds": [
+      1,
+      13,
+      137,
+      171,
+      37,
+      23,
+      3,
+      81
+    ]
+  },
+  {
+    "id": 1377,
+    "version": 11,
+    "slug": "coal-consumption-by-country-terawatt-hours-twh",
+    "title": "Coal consumption",
+    "subtitle": "Coal consumption by country or region, measured in terawatt-hour (TWh) equivalents.",
+    "hideTitleAnnotation": true,
+    "minTime": 1965,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "https://ourworldindata.org/fossil-fuels",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2020,
+      "colorScale": {
+        "baseColorScheme": "OrRd",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          100,
+          250,
+          500,
+          1000,
+          2500,
+          5000,
+          10000
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true,
+        "legendDescription": "Coal consumption, terrawatt-hours (TWh)"
+      },
+      "variableId": 147615
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 147615,
+        "display": {
+          "shortUnit": "TWh",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "India",
+      "Japan",
+      "Germany",
+      "United States",
+      "United Kingdom"
+    ],
+    "selectedEntityIds": [
+      137,
+      14,
+      6,
+      13,
+      1
+    ]
+  },
+  {
+    "id": 1380,
+    "version": 8,
+    "slug": "oil-consumption-by-country",
+    "title": "Oil consumption",
+    "subtitle": "Oil consumption is measured in terawatt-hour (TWh) equivalents per year.",
+    "hideTitleAnnotation": true,
+    "minTime": 1965,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "https://ourworldindata.org/fossil-fuels",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "map": {
+      "time": 2020,
+      "colorScale": {
+        "baseColorScheme": "GnBu",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          200,
+          400,
+          600,
+          800,
+          1000,
+          2500,
+          5000,
+          7500,
+          10000,
+          15000
+        ],
+        "equalSizeBins": true,
+        "legendDescription": "Oil consumption, terrawatt-hours per year"
+      },
+      "variableId": 147653
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 147653,
+        "display": {
+          "shortUnit": "TWh",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "United States",
+      "Australia",
+      "United Kingdom",
+      "Canada",
+      "South Africa",
+      "Norway",
+      "China"
+    ],
+    "selectedEntityIds": [
+      13,
+      23,
+      1,
+      44,
+      81,
+      102,
+      171
+    ]
+  },
+  {
+    "id": 1382,
+    "version": 10,
+    "slug": "gas-consumption-by-country",
+    "title": "Gas consumption",
+    "subtitle": "Natural gas consumption is measured in terawatt-hour (TWh) equivalents per year.",
+    "sourceDesc": "BP Statistical Review of Global Energy",
+    "hideTitleAnnotation": true,
+    "minTime": 1965,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "https://ourworldindata.org/fossil-fuels",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2020,
+      "colorScale": {
+        "baseColorScheme": "Purples",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          50,
+          100,
+          200,
+          400,
+          600,
+          800,
+          1000,
+          2500,
+          5000,
+          10000
+        ],
+        "equalSizeBins": true,
+        "legendDescription": "Natural gas consumption, terrawatt-hours per year"
+      },
+      "variableId": 147629
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 147629,
+        "display": {
+          "shortUnit": "TWh",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Argentina",
+      "Austria",
+      "United States",
+      "Canada",
+      "United Kingdom",
+      "South Korea",
+      "China"
+    ],
+    "selectedEntityIds": [
+      21,
+      24,
+      13,
+      44,
+      1,
+      127,
+      171
+    ]
+  },
+  {
+    "id": 1385,
+    "version": 8,
+    "slug": "coal-consumption-per-capita",
+    "title": "Per capita energy consumption from coal",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & UN Population",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "https://ourworldindata.org/fossil-fuels/",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "OrRd",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          1000,
+          2500,
+          5000,
+          10000,
+          25000,
+          50000,
+          100000
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143211
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143211,
+        "display": {
+          "name": "Coal per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "conversionFactor": 1,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Indonesia",
+      "India",
+      "China",
+      "United States",
+      "Australia",
+      "United Kingdom"
+    ],
+    "selectedEntityIds": [
+      136,
+      137,
+      171,
+      13,
+      23,
+      1
+    ]
+  },
+  {
+    "id": 1403,
+    "version": 14,
+    "slug": "solar-energy-consumption",
+    "title": "Solar power generation",
+    "subtitle": "Electricity generation from solar, measured in terawatt-hours (TWh) per year.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "minTime": 1965,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "https://ourworldindata.org/renewable-energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0,
+      "canChangeScaleType": true
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "YlOrRd",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          0.1,
+          0.5,
+          1,
+          2.5,
+          5,
+          7.5,
+          10,
+          20,
+          40,
+          60,
+          80
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true,
+        "legendDescription": "Solar PV energy consumption"
+      },
+      "variableId": 247956
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247956,
+        "display": {
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "India",
+      "China",
+      "Australia",
+      "United States",
+      "South Africa",
+      "Spain",
+      "World"
+    ],
+    "selectedEntityIds": [
+      137,
+      171,
+      23,
+      13,
+      81,
+      9,
+      355
+    ]
+  },
+  {
+    "id": 1410,
+    "version": 15,
+    "slug": "wind-generation",
+    "title": "Wind power generation",
+    "subtitle": "Annual electricity generation from wind is measured in terawatt-hours (TWh) per year. This includes both onshore and offshore wind sources.",
+    "hideTitleAnnotation": true,
+    "minTime": 1965,
+    "maxTime": 2021,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "https://ourworldindata.org/renewable-energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0,
+      "canChangeScaleType": true,
+      "scaleType": "log"
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "PuBu",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          1,
+          10,
+          25,
+          50,
+          75,
+          100,
+          150,
+          200,
+          225,
+          250
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247957
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247957,
+        "display": {
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "United Kingdom",
+      "India",
+      "Australia",
+      "New Zealand",
+      "Denmark"
+    ],
+    "selectedEntityIds": [
+      1,
+      137,
+      23,
+      106,
+      161
+    ]
+  },
+  {
+    "id": 1419,
+    "version": 14,
+    "slug": "hydropower-consumption",
+    "title": "Hydropower generation",
+    "subtitle": "Annual hydropower generation is measured in terawatt-hours (TWh).",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "minTime": 1965,
+    "maxTime": 2021,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "https://ourworldindata.org/renewable-energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0,
+      "canChangeScaleType": true
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "GnBu",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          10,
+          25,
+          50,
+          75,
+          100,
+          250,
+          500,
+          750,
+          1000,
+          1250
+        ],
+        "equalSizeBins": true,
+        "legendDescription": "Hydropower consumption"
+      },
+      "variableId": 247949
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247949,
+        "display": {
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "China",
+      "India",
+      "Botswana",
+      "United States",
+      "Sweden",
+      "France"
+    ],
+    "selectedEntityIds": [
+      171,
+      137,
+      36,
+      13,
+      10,
+      3
+    ]
+  },
+  {
+    "id": 3868,
+    "version": 7,
+    "slug": "primary-energy-cons",
+    "title": "Primary energy consumption",
+    "subtitle": "Primary energy consumption is measured in terawatt-hours (TWh). ",
+    "sourceDesc": "BP Statistical Review of Global Energy",
+    "note": "Data includes only commercially-traded fuels (coal, oil, gas), nuclear and modern renewables. It does not include traditional biomass.",
+    "hideTitleAnnotation": true,
+    "minTime": 1965,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "timeTolerance": 3,
+      "colorScale": {
+        "baseColorScheme": "YlGnBu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          500,
+          1000,
+          2500,
+          5000,
+          10000,
+          25000
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143360
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143360,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      88,
+      273,
+      165
+    ]
+  },
+  {
+    "id": 4287,
+    "version": 7,
+    "slug": "change-energy-consumption",
+    "title": "Annual change in primary energy consumption",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & World Bank",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "RdYlBu",
+        "colorSchemeInvert": true,
+        "binningStrategy": "manual",
+        "customNumericMinValue": -25,
+        "customNumericValues": [
+          -10,
+          -5,
+          -1,
+          0,
+          1,
+          5,
+          10,
+          25
+        ],
+        "customNumericColors": [
+          null,
+          null,
+          null
+        ]
+      },
+      "variableId": 143361
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143361,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      355
+    ]
+  },
+  {
+    "id": 4288,
+    "version": 10,
+    "slug": "abs-change-energy-consumption",
+    "title": "Absolute annual change in primary energy consumption",
+    "subtitle": "The annual change in primary energy consumption is measured in terawatt-hours (TWh) in one year relative to the previous year.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & World Bank",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0,
+      "canChangeScaleType": true
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "timeTolerance": 3,
+      "colorScale": {
+        "baseColorScheme": "PuOr",
+        "colorSchemeInvert": true,
+        "binningStrategy": "manual",
+        "customNumericMinValue": -500,
+        "customNumericValues": [
+          -100,
+          -50,
+          -10,
+          0,
+          10,
+          50,
+          100,
+          500
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143362
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143362,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      155,
+      96,
+      81
+    ]
+  },
+  {
+    "id": 4289,
+    "version": 14,
+    "slug": "electricity-generation",
+    "title": "Electricity Generation",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "YlGnBu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          100,
+          250,
+          500,
+          1000,
+          2500,
+          5000
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247946
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247946,
+        "display": {
+          "name": "Electricity Generation",
+          "unit": "terawatt-hours",
+          "shortUnit": "TWh",
+          "tolerance": 2,
+          "includeInTable": true
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Sweden",
+      "India",
+      "United States",
+      "United Kingdom",
+      "France"
+    ],
+    "selectedEntityIds": [
+      10,
+      137,
+      13,
+      1,
+      3
+    ]
+  },
+  {
+    "id": 4290,
+    "version": 9,
+    "slug": "coal-energy-share",
+    "title": "Share of primary energy from coal",
+    "note": "Primary energy is calculated using the 'substitution method' which takes account of the inefficiencies energy production from fossil fuels.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlOrBr",
+        "binningStrategy": "equalInterval"
+      },
+      "variableId": 143016
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143016,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      101,
+      355,
+      113
+    ]
+  },
+  {
+    "id": 4291,
+    "version": 9,
+    "slug": "oil-share-energy",
+    "title": "Share of primary energy from oil",
+    "note": "Primary energy is calculated using the 'substitution method' which takes account of the inefficiencies energy production from fossil fuels.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlOrRd",
+        "binningStrategy": "equalInterval"
+      },
+      "variableId": 143018
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143018,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      116,
+      65,
+      83
+    ]
+  },
+  {
+    "id": 4292,
+    "version": 9,
+    "slug": "gas-share-energy",
+    "title": "Share of primary energy from gas",
+    "note": "Primary energy is calculated using the 'substitution method' which takes account of the inefficiencies energy production from fossil fuels.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "Blues",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "variableId": 143017
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143017,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      66,
+      210,
+      85
+    ]
+  },
+  {
+    "id": 4293,
+    "version": 10,
+    "slug": "fossil-fuels-share-energy",
+    "title": "Share of primary energy from fossil fuels",
+    "note": "Primary energy is calculated using the 'substitution method' which takes account of the inefficiencies energy production from fossil fuels.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlOrBr",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          25,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100
+        ],
+        "customNumericColors": [
+          null,
+          null
+        ]
+      },
+      "variableId": 143025
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143025,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Taiwan",
+      "Poland",
+      "Denmark"
+    ],
+    "selectedEntityIds": [
+      198,
+      11,
+      161
+    ]
+  },
+  {
+    "id": 4294,
+    "version": 11,
+    "slug": "nuclear-primary-energy",
+    "title": "Share of primary energy from nuclear",
+    "note": "Primary energy is calculated using the 'substitution method' which takes account of the inefficiencies energy production from fossil fuels.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2019,
+      "colorScale": {
+        "baseColorScheme": "BuPu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          2.5,
+          5,
+          10,
+          20,
+          30,
+          40,
+          50
+        ],
+        "customNumericColors": [
+          null
+        ]
+      },
+      "variableId": 143019
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143019,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Peru",
+      "Oman",
+      "Argentina"
+    ],
+    "selectedEntityIds": [
+      97,
+      217,
+      21
+    ]
+  },
+  {
+    "id": 4295,
+    "version": 10,
+    "slug": "renewable-share-energy",
+    "title": "Share of primary energy from renewable sources",
+    "subtitle": "Renewable energy sources includes hydropower, solar, wind, geothermal, bioenergy, wave and tidal. It does not include traditional biofuels, which can be a key energy source especially in lower-income settings.",
+    "note": "Primary energy is calculated using the 'substitution method' which takes account of the inefficiencies energy production from fossil fuels.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "Greens",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          5,
+          10,
+          20,
+          30,
+          50,
+          85
+        ],
+        "customNumericColors": [
+          null,
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143021
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143021,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      37,
+      1,
+      96
+    ]
+  },
+  {
+    "id": 4296,
+    "version": 9,
+    "slug": "hydro-share-energy",
+    "title": "Share of primary energy from hydroelectric power",
+    "note": "Primary energy is calculated using the 'substitution method' which takes account of the inefficiencies energy production from fossil fuels.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "GnBu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143020
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143020,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      165,
+      101,
+      294
+    ]
+  },
+  {
+    "id": 4297,
+    "version": 10,
+    "slug": "solar-share-energy",
+    "title": "Share of primary energy from solar",
+    "note": "Primary energy is calculated using the 'substitution method' which takes account of the inefficiencies energy production from fossil fuels.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlOrRd",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          0.01,
+          0.03,
+          0.1,
+          0.3,
+          1,
+          3,
+          10
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143022
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143022,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "North America",
+      "Slovenia",
+      "Turkey"
+    ],
+    "selectedEntityIds": [
+      294,
+      83,
+      70
+    ]
+  },
+  {
+    "id": 4298,
+    "version": 9,
+    "slug": "wind-share-energy",
+    "title": "Share of primary energy from wind",
+    "note": "Primary energy is calculated using the 'substitution method' which takes account of the inefficiencies energy production from fossil fuels.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "PuBuGn",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          0.5,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143023
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143023,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      165,
+      208,
+      163
+    ]
+  },
+  {
+    "id": 4303,
+    "version": 11,
+    "slug": "low-carbon-share-energy",
+    "title": "Share of primary energy from low-carbon sources",
+    "subtitle": "Low-carbon energy is defined as the sum of nuclear and renewable sources. Renewable sources include hydropower, solar, wind, geothermal, wave and tidal and bioenergy. Traditional biofuels are not included.",
+    "note": "Primary energy is calculated using the 'substitution method' which takes account of the inefficiencies energy production from fossil fuels.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlGnBu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          10,
+          20,
+          30,
+          40,
+          50,
+          60
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143026
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143026,
+        "display": {
+          "unit": "%",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      106,
+      8,
+      355,
+      3,
+      171,
+      137,
+      14,
+      13
+    ]
+  },
+  {
+    "id": 4309,
+    "version": 15,
+    "slug": "nuclear-energy-generation",
+    "title": "Nuclear power generation",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0,
+      "canChangeScaleType": true
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "GnBu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          50,
+          100,
+          200,
+          400,
+          800
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247951
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247951,
+        "display": {
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "France",
+      "Sweden",
+      "United Kingdom",
+      "Japan",
+      "Germany"
+    ],
+    "selectedEntityIds": [
+      3,
+      10,
+      1,
+      14,
+      6
+    ]
+  },
+  {
+    "id": 4315,
+    "version": 13,
+    "slug": "share-electricity-low-carbon",
+    "title": "Share of electricity from low-carbon sources",
+    "subtitle": "Low-carbon electricity is the sum of electricity from nuclear and renewable sources (including solar, wind, hydropower, biomass and waste, geothermal and wave and tidal).",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "YlGn",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100
+        ]
+      },
+      "variableId": 247978
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247978,
+        "display": {
+          "name": "Share of electricity from low-carbon sources",
+          "unit": "%",
+          "shortUnit": "%",
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "United Kingdom",
+      "World",
+      "Sweden",
+      "China",
+      "India",
+      "United States"
+    ],
+    "selectedEntityIds": [
+      1,
+      355,
+      10,
+      171,
+      137,
+      13
+    ]
+  },
+  {
+    "id": 4319,
+    "version": 13,
+    "slug": "share-electricity-coal",
+    "title": "Share of electricity production from coal",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "Oranges",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          5,
+          10,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247973
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247973,
+        "display": {
+          "name": "Coal",
+          "unit": "%",
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "China",
+      "India",
+      "World",
+      "United Kingdom",
+      "Japan",
+      "United States"
+    ],
+    "selectedEntityIds": [
+      171,
+      137,
+      355,
+      1,
+      14,
+      13
+    ]
+  },
+  {
+    "id": 4320,
+    "version": 13,
+    "slug": "share-electricity-gas",
+    "title": "Share of electricity production from gas",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "BuPu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          10,
+          20,
+          30,
+          40,
+          50,
+          60
+        ]
+      },
+      "variableId": 247975
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247975,
+        "display": {
+          "name": "Gas",
+          "unit": "%",
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Russia",
+      "United States",
+      "United Kingdom",
+      "South Korea",
+      "World"
+    ],
+    "selectedEntityIds": [
+      12,
+      13,
+      1,
+      127,
+      355
+    ]
+  },
+  {
+    "id": 4321,
+    "version": 13,
+    "slug": "share-electricity-hydro",
+    "title": "Share of electricity production from hydropower",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "PuBu",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          20,
+          40,
+          60,
+          80,
+          100
+        ]
+      },
+      "variableId": 247982
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247982,
+        "display": {
+          "name": "Hydropower",
+          "unit": "%",
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "World",
+      "Sweden",
+      "Brazil",
+      "France",
+      "India"
+    ],
+    "selectedEntityIds": [
+      355,
+      10,
+      37,
+      3,
+      137
+    ]
+  },
+  {
+    "id": 4322,
+    "version": 14,
+    "slug": "share-electricity-nuclear",
+    "title": "Share of electricity production from nuclear",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "YlGnBu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          0,
+          15,
+          20,
+          30,
+          40,
+          50,
+          60
+        ],
+        "customNumericLabels": [
+          "no nuclear",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "customNumericColorsActive": true,
+        "customNumericColors": [
+          "#ffede6",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247979
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247979,
+        "display": {
+          "name": "Nuclear",
+          "unit": "%",
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "France",
+      "Sweden",
+      "World",
+      "Germany",
+      "Japan"
+    ],
+    "selectedEntityIds": [
+      3,
+      10,
+      355,
+      6,
+      14
+    ]
+  },
+  {
+    "id": 4323,
+    "version": 14,
+    "slug": "share-electricity-wind",
+    "title": "Share of electricity production from wind",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "PuBuGn",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          1,
+          5,
+          10,
+          20,
+          30,
+          60
+        ],
+        "customNumericColors": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247981
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247981,
+        "display": {
+          "name": "Wind",
+          "unit": "%",
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "World",
+      "United Kingdom",
+      "United States",
+      "India",
+      "Austria",
+      "Denmark"
+    ],
+    "selectedEntityIds": [
+      355,
+      1,
+      13,
+      137,
+      24,
+      161
+    ]
+  },
+  {
+    "id": 4324,
+    "version": 14,
+    "slug": "share-electricity-solar",
+    "title": "Share of electricity production from solar",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "YlOrRd",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247980
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247980,
+        "display": {
+          "name": "Solar",
+          "unit": "%",
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "World",
+      "United Kingdom",
+      "India",
+      "Spain",
+      "Italy",
+      "Chile"
+    ],
+    "selectedEntityIds": [
+      355,
+      1,
+      137,
+      9,
+      8,
+      172
+    ]
+  },
+  {
+    "id": 4325,
+    "version": 13,
+    "slug": "share-electricity-fossil-fuels",
+    "title": "Share of electricity production from fossil fuels",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "YlOrBr",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          20,
+          40,
+          60,
+          80,
+          100
+        ]
+      },
+      "variableId": 247976
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247976,
+        "display": {
+          "name": "Fossil fuels",
+          "unit": "%",
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "World",
+      "China",
+      "Australia",
+      "United States",
+      "South Africa",
+      "Sweden",
+      "France"
+    ],
+    "selectedEntityIds": [
+      355,
+      171,
+      23,
+      13,
+      81,
+      10,
+      3
+    ]
+  },
+  {
+    "id": 4326,
+    "version": 14,
+    "slug": "share-electricity-renewables",
+    "title": "Share of electricity production from renewables",
+    "subtitle": "Renewables includes electricity production from hydropower, solar, wind, biomass and waste, geothermal, wave and tidal sources.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "YlGnBu",
+        "binningStrategy": "manual",
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          20,
+          40,
+          60,
+          80,
+          100
+        ]
+      },
+      "variableId": 247977
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247977,
+        "display": {
+          "name": "Renewables",
+          "unit": "%",
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "World",
+      "Sweden",
+      "France",
+      "Brazil",
+      "China",
+      "India",
+      "United States"
+    ],
+    "selectedEntityIds": [
+      355,
+      10,
+      3,
+      37,
+      171,
+      137,
+      13
+    ]
+  },
+  {
+    "id": 4376,
+    "version": 10,
+    "slug": "per-capita-oil",
+    "title": "Per capita oil consumption",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & UN Population Division",
+    "hideTitleAnnotation": true,
+    "minTime": "latest",
+    "hasMapTab": true,
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlOrRd",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          5000,
+          10000,
+          20000,
+          30000,
+          40000,
+          50000
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143212
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143212,
+        "display": {
+          "name": "Oil per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "conversionFactor": 1,
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Chile",
+      "United States",
+      "United Kingdom",
+      "Norway",
+      "China",
+      "Brazil",
+      "South Africa",
+      "Australia",
+      "India"
+    ],
+    "selectedEntityIds": [
+      172,
+      13,
+      1,
+      102,
+      171,
+      37,
+      81,
+      23,
+      137
+    ]
+  },
+  {
+    "id": 4377,
+    "version": 7,
+    "slug": "per-capita-gas",
+    "title": "Per capita gas consumption",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & UN Population Division",
+    "hideTitleAnnotation": true,
+    "minTime": "latest",
+    "hasMapTab": true,
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "BuPu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          5000,
+          10000,
+          20000,
+          30000,
+          40000,
+          50000
+        ],
+        "customNumericColors": [
+          null
+        ]
+      },
+      "variableId": 143213
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143213,
+        "display": {
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      86,
+      102,
+      6,
+      127,
+      12,
+      13,
+      44
+    ]
+  },
+  {
+    "id": 4378,
+    "version": 11,
+    "slug": "per-capita-renewables",
+    "title": "Per capita energy consumption from renewables",
+    "subtitle": "Renewables is the sum of energy from hydropower, wind, solar, geothermal, wave and tidal, and bioenergy. Traditional biofuels are not included.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & UN Population Division",
+    "note": "'Primary energy’ refers to energy in its raw form, before conversion into electricity, heat or transport fuels. It is here measured in terms of 'input equivalents' via the substitution method: the amount of primary energy that would be required from fossil fuels to generate the same amount of electricity from renewables.",
+    "minTime": 2018,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlGnBu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          0.5,
+          1,
+          2.5,
+          5,
+          10,
+          25,
+          50
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143218
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143218,
+        "display": {
+          "name": "Renewables",
+          "unit": "megawatt-hours",
+          "shortUnit": "MWh",
+          "conversionFactor": 0.001,
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      81,
+      5,
+      1,
+      3,
+      10,
+      13,
+      137,
+      37
+    ]
+  },
+  {
+    "id": 4379,
+    "version": 11,
+    "slug": "per-capita-hydro",
+    "title": "Per capita energy consumption from hydropower",
+    "subtitle": "Energy consumption is based on primary energy equivalents, rather than final electricity use.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & UN Population Division",
+    "note": "'Primary energy’ refers to energy in its raw form, before conversion into electricity, heat or transport fuels. It is here measured in terms of 'input equivalents' via the substitution method: the amount of primary energy that would be required from fossil fuels to generate the same amount of electricity from hydropower.",
+    "hideTitleAnnotation": true,
+    "minTime": 2018,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "PuBu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          500,
+          1000,
+          2500,
+          5000,
+          10000,
+          25000
+        ],
+        "customNumericColors": [
+          null,
+          null,
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143217
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143217,
+        "display": {
+          "name": "Hydropower",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      10,
+      3,
+      1,
+      37,
+      172,
+      171,
+      21,
+      44
+    ]
+  },
+  {
+    "id": 4380,
+    "version": 14,
+    "slug": "per-capita-wind",
+    "title": "Per capita energy consumption from wind",
+    "subtitle": "Energy consumption is based on primary energy equivalents, rather than final electricity use.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & UN Population Division",
+    "note": "'Primary energy’ refers to energy in its raw form, before conversion into electricity, heat or transport fuels. It is here measured in terms of 'input equivalents' via the substitution method: the amount of primary energy that would be required from fossil fuels to generate the same amount of electricity from wind.",
+    "hideTitleAnnotation": true,
+    "minTime": "latest",
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlGn",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          100,
+          250,
+          500,
+          750,
+          1000,
+          1250,
+          1500
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143216
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143216,
+        "display": {
+          "name": "Wind",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      137,
+      171,
+      6,
+      13,
+      1,
+      161,
+      7
+    ]
+  },
+  {
+    "id": 4381,
+    "version": 10,
+    "slug": "per-capita-solar",
+    "title": "Per capita energy consumption from solar",
+    "subtitle": "Energy consumption is based on primary energy equivalents, rather than final electricity use.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & UN Population Division",
+    "note": "'Primary energy’ refers to energy in its raw form, before conversion into electricity, heat or transport fuels. It is here measured in terms of 'input equivalents' via the substitution method: the amount of primary energy that would be required from fossil fuels to generate the same amount of electricity from solar.",
+    "minTime": "latest",
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "OrRd",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          25,
+          50,
+          75,
+          100,
+          250,
+          500,
+          750
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143215
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143215,
+        "display": {
+          "name": "Solar",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      9,
+      137,
+      95,
+      1,
+      171,
+      23,
+      106,
+      13
+    ]
+  },
+  {
+    "id": 4382,
+    "version": 11,
+    "slug": "per-capita-nuclear",
+    "title": "Per capita energy consumption from nuclear",
+    "subtitle": "Energy consumption is based on primary energy equivalents, rather than final electricity use.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & UN Population Division",
+    "note": "'Primary energy’ refers to energy in its raw form, before conversion into electricity, heat or transport fuels. It is here measured in terms of 'input equivalents' via the substitution method: the amount of primary energy that would be required from fossil fuels to generate the same amount of electricity from nuclear.",
+    "hideTitleAnnotation": true,
+    "minTime": 2018,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "PuBuGn",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          100,
+          500,
+          1000,
+          2500,
+          5000,
+          7500
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143214
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143214,
+        "display": {
+          "name": "Nuclear",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      3,
+      6,
+      14,
+      171,
+      127,
+      137,
+      10
+    ]
+  },
+  {
+    "id": 4383,
+    "version": 10,
+    "slug": "per-capita-low-carbon-energy",
+    "title": "Per capita consumption of low-carbon energy",
+    "subtitle": "Low carbon energy is the sum of nuclear and renewable energy sources. This is based on primary energy equivalents, rather than final electricity use.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & UN Population Division",
+    "hideTitleAnnotation": true,
+    "minTime": "latest",
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlGnBu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          500,
+          1000,
+          2000,
+          4000,
+          6000,
+          8000
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143220
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143220,
+        "display": {
+          "name": "Low-carbon",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      10,
+      3,
+      23,
+      13,
+      1,
+      171,
+      14
+    ]
+  },
+  {
+    "id": 4385,
+    "version": 10,
+    "slug": "annual-change-nuclear",
+    "title": "Annual change in nuclear energy generation",
+    "subtitle": "Shown is the change in nuclear energy generation relative to the previous year, measured in terawatt-hours.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "RdYlBu",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -100,
+        "customNumericValues": [
+          -50,
+          -25,
+          -10,
+          0,
+          10,
+          25,
+          50,
+          100
+        ],
+        "customNumericColors": [
+          null
+        ]
+      },
+      "variableId": 143034
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143034,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      355,
+      137,
+      6,
+      171,
+      14,
+      13
+    ]
+  },
+  {
+    "id": 4386,
+    "version": 8,
+    "slug": "annual-percentage-change-nuclear",
+    "title": "Annual percentage change in nuclear energy generation",
+    "subtitle": "Shown is the percentage change in nuclear energy generation relative to the previous year.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "minTime": 2018,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "RdBu",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -100,
+        "customNumericValues": [
+          -50,
+          -25,
+          -10,
+          0,
+          10,
+          25,
+          50,
+          100
+        ],
+        "customNumericColors": [
+          null,
+          null
+        ]
+      },
+      "variableId": 143033
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143033,
+        "display": {
+          "name": "Nuclear",
+          "unit": "%",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      44,
+      355,
+      3,
+      6,
+      171
+    ]
+  },
+  {
+    "id": 4387,
+    "version": 8,
+    "slug": "annual-change-coal",
+    "title": "Annual change in coal energy consumption",
+    "subtitle": "Shown is the change in coal energy consumption relative to the previous year, measured in terawatt-hours.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "minTime": "latest",
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "BrBG",
+        "colorSchemeInvert": true,
+        "binningStrategy": "manual",
+        "customNumericMinValue": -250,
+        "customNumericValues": [
+          -100,
+          -50,
+          -25,
+          0,
+          25,
+          50,
+          100,
+          250
+        ],
+        "customNumericColors": [
+          null
+        ]
+      },
+      "variableId": 143028
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143028,
+        "display": {
+          "numDecimalPlaces": 1,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      7
+    ]
+  },
+  {
+    "id": 4388,
+    "version": 11,
+    "slug": "annual-percentage-change-coal",
+    "title": "Annual percentage change in coal energy consumption",
+    "subtitle": "Shown is the percentage change in coal energy consumption relative to the previous year.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "minTime": "latest",
+    "hasMapTab": true,
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "BrBG",
+        "colorSchemeInvert": true,
+        "binningStrategy": "manual",
+        "customNumericMinValue": -100,
+        "customNumericValues": [
+          -50,
+          -25,
+          -10,
+          0,
+          10,
+          25,
+          50,
+          100
+        ]
+      },
+      "variableId": 143027
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143027,
+        "display": {
+          "name": "Coal",
+          "unit": "%",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      8,
+      355,
+      171,
+      137,
+      6,
+      13,
+      3
+    ]
+  },
+  {
+    "id": 4389,
+    "version": 7,
+    "slug": "annual-change-oil",
+    "title": "Annual change in oil consumption",
+    "subtitle": "Shown is the change in oil energy consumption relative to the previous year, measured in terawatt-hours.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "PRGn",
+        "colorSchemeInvert": true,
+        "binningStrategy": "manual",
+        "customNumericMinValue": -100,
+        "customNumericValues": [
+          -50,
+          -25,
+          0,
+          25,
+          50,
+          100
+        ],
+        "customNumericColors": [
+          null
+        ]
+      },
+      "variableId": 143032
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143032,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      155,
+      95,
+      102,
+      37,
+      23,
+      13
+    ]
+  },
+  {
+    "id": 4390,
+    "version": 7,
+    "slug": "annual-percentage-change-oil",
+    "title": "Annual percentage change in oil consumption",
+    "subtitle": "Shown is the percentage change in oil energy consumption relative to the previous year.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "minTime": "latest",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "colorScale": {
+        "binningStrategy": "equalInterval"
+      }
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143031,
+        "display": {
+          "name": "Oil",
+          "unit": "%",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      355,
+      13,
+      102,
+      171,
+      137,
+      44
+    ]
+  },
+  {
+    "id": 4391,
+    "version": 7,
+    "slug": "annual-change-gas",
+    "title": "Annual change in gas consumption",
+    "subtitle": "Shown is the change in gas energy consumption relative to the previous year, measured in terawatt-hours.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "PiYG",
+        "colorSchemeInvert": true,
+        "binningStrategy": "manual",
+        "customNumericMinValue": -100,
+        "customNumericValues": [
+          -50,
+          -25,
+          -10,
+          0,
+          10,
+          25,
+          50,
+          100
+        ],
+        "customNumericColors": [
+          null
+        ]
+      },
+      "variableId": 143030
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143030,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      13,
+      44,
+      1,
+      37,
+      12
+    ]
+  },
+  {
+    "id": 4392,
+    "version": 8,
+    "slug": "annual-percentage-change-gas",
+    "title": "Annual percentage change in gas consumption",
+    "subtitle": "Shown is the percentage change in gas energy consumption relative to the previous year.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "minTime": "latest",
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "PiYG",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -50,
+        "customNumericValues": [
+          -25,
+          -10,
+          0,
+          10,
+          25,
+          50
+        ],
+        "customNumericColors": [
+          null
+        ]
+      },
+      "variableId": 143029
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143029,
+        "display": {
+          "name": "Gas",
+          "unit": "%",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      13,
+      1,
+      9,
+      12,
+      171,
+      137,
+      355
+    ]
+  },
+  {
+    "id": 4393,
+    "version": 8,
+    "slug": "annual-change-fossil-fuels",
+    "title": "Annual change in fossil fuel consumption",
+    "subtitle": "Shown is the change in fossil energy consumption relative to the previous year, measured in terawatt-hours. This is the sum of energy from coal, oil and gas.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "BrBG",
+        "colorSchemeInvert": true,
+        "binningStrategy": "manual",
+        "customNumericMinValue": -250,
+        "customNumericValues": [
+          -100,
+          -50,
+          -25,
+          0,
+          25,
+          50,
+          100,
+          250
+        ]
+      },
+      "variableId": 143046
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143046,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      171,
+      137,
+      13,
+      1,
+      6,
+      14,
+      81
+    ]
+  },
+  {
+    "id": 4394,
+    "version": 8,
+    "slug": "annual-percentage-change-fossil-fuels",
+    "title": "Annual percentage change in fossil fuel consumption",
+    "subtitle": "Shown is the percentage change in fossil energy consumption relative to the previous year. This is the sum of energy from coal, oil and gas.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "minTime": "latest",
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "BrBG",
+        "colorSchemeInvert": true,
+        "binningStrategy": "manual",
+        "customNumericMinValue": -25,
+        "customNumericValues": [
+          -10,
+          -5,
+          0,
+          5,
+          10,
+          25
+        ],
+        "customNumericColors": [
+          null,
+          null
+        ]
+      },
+      "variableId": 143045
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143045,
+        "display": {
+          "name": "Fossil fuels",
+          "unit": "%",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      355,
+      171,
+      137,
+      13,
+      1,
+      6,
+      9
+    ]
+  },
+  {
+    "id": 4395,
+    "version": 8,
+    "slug": "annual-change-renewables",
+    "title": "Annual change in renewable energy generation",
+    "subtitle": "Shown is the change in renewable energy generation relative to the previous year, measured in terawatt-hours. This is the sum of energy from hydropower, solar, wind, geothermal, wave and tidal, and bioenergy.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "RdBu",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -50,
+        "customNumericValues": [
+          -25,
+          -10,
+          -5,
+          0,
+          5,
+          10,
+          25,
+          50
+        ],
+        "customNumericColors": [
+          null
+        ]
+      },
+      "variableId": 143044
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143044,
+        "display": {
+          "name": "Renewables",
+          "unit": "terawatt-hours",
+          "shortUnit": "TWh",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      171,
+      137,
+      13,
+      3,
+      6,
+      23
+    ]
+  },
+  {
+    "id": 4396,
+    "version": 8,
+    "slug": "annual-percentage-change-renewables",
+    "title": "Annual percentage change in renewable energy generation",
+    "subtitle": "Shown is the percentage change in renewable energy generation relative to the previous year. This is the sum of energy from hydropower, solar, wind, geothermal, wave and tidal, and bioenergy.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "minTime": 2018,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "RdBu",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -100,
+        "customNumericValues": [
+          -50,
+          -25,
+          -10,
+          0,
+          10,
+          25,
+          50,
+          100
+        ]
+      },
+      "variableId": 143043
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143043,
+        "display": {
+          "name": "Renewables",
+          "unit": "%",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      355,
+      171,
+      137,
+      13,
+      1,
+      23,
+      9
+    ]
+  },
+  {
+    "id": 4397,
+    "version": 9,
+    "slug": "annual-change-hydro",
+    "title": "Annual change in hydropower generation",
+    "subtitle": "Shown is the change in renewable energy generation relative to the previous year, measured in terawatt-hours. ",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "RdYlBu",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -50,
+        "customNumericValues": [
+          -25,
+          -10,
+          -5,
+          0,
+          5,
+          10,
+          25,
+          50
+        ]
+      },
+      "variableId": 143036
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143036,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      7,
+      10,
+      6,
+      3,
+      171,
+      137
+    ]
+  },
+  {
+    "id": 4398,
+    "version": 9,
+    "slug": "annual-percentage-change-hydro",
+    "title": "Annual percentage change in hydropower generation",
+    "subtitle": "Shown is the percentage change in hydropower generation relative to the previous year. ",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "minTime": "latest",
+    "hasMapTab": true,
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "PuOr",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -50,
+        "customNumericValues": [
+          -25,
+          -10,
+          -5,
+          0,
+          5,
+          10,
+          25,
+          50
+        ],
+        "customNumericColors": [
+          null
+        ]
+      },
+      "variableId": 143035
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143035,
+        "display": {
+          "name": "Hydropower",
+          "unit": "%",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      355,
+      171,
+      137,
+      13,
+      1,
+      3,
+      6
+    ]
+  },
+  {
+    "id": 4399,
+    "version": 9,
+    "slug": "annual-change-wind",
+    "title": "Annual change in wind energy generation",
+    "subtitle": "Shown is the change in wind energy generation relative to the previous year, measured in terawatt-hours. ",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "minTime": 1996,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "PuOr",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -25,
+        "customNumericValues": [
+          -10,
+          -5,
+          -1,
+          0,
+          1,
+          5,
+          10,
+          25
+        ]
+      },
+      "variableId": 143040
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143040,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      138,
+      10,
+      1,
+      2,
+      137,
+      161,
+      24
+    ]
+  },
+  {
+    "id": 4400,
+    "version": 9,
+    "slug": "annual-percentage-change-wind",
+    "title": "Annual percentage change in wind energy generation",
+    "subtitle": "Shown is the percentage change in wind energy generation relative to the previous year. ",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "minTime": "latest",
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "PuOr",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -50,
+        "customNumericValues": [
+          -25,
+          -10,
+          -5,
+          0,
+          5,
+          10,
+          25,
+          50
+        ]
+      },
+      "variableId": 143039
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143039,
+        "display": {
+          "name": "Wind",
+          "unit": "%",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      13,
+      1,
+      355,
+      10,
+      137,
+      171,
+      155
+    ]
+  },
+  {
+    "id": 4401,
+    "version": 9,
+    "slug": "annual-change-solar",
+    "title": "Annual change in solar energy generation",
+    "subtitle": "Shown is the change in solar energy generation relative to the previous year, measured in terawatt-hours. ",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "minTime": 1996,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "RdBu",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -50,
+        "customNumericValues": [
+          -25,
+          -10,
+          -5,
+          -1,
+          0,
+          1,
+          5,
+          10,
+          25,
+          50
+        ],
+        "customNumericColors": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143038
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143038,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      137,
+      171,
+      23,
+      9,
+      13
+    ]
+  },
+  {
+    "id": 4402,
+    "version": 11,
+    "slug": "annual-percentage-change-solar",
+    "title": "Annual percentage change in solar energy generation",
+    "subtitle": "Shown is the percentage change in solar energy generation relative to the previous year. ",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "minTime": "latest",
+    "hasMapTab": true,
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "PuOr",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -100,
+        "customNumericValues": [
+          -50,
+          -25,
+          -10,
+          0,
+          10,
+          25,
+          50,
+          100
+        ]
+      },
+      "variableId": 143037
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143037,
+        "display": {
+          "name": "Solar",
+          "unit": "%",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      171,
+      137,
+      13,
+      1,
+      9,
+      355
+    ]
+  },
+  {
+    "id": 4403,
+    "version": 8,
+    "slug": "annual-change-low-carbon-energy",
+    "title": "Annual change in low-carbon energy generation",
+    "subtitle": "Shown is the change in low-carbon energy generation relative to the previous year, measured in terawatt-hours. This is the sum of energy from nuclear and renewable sources.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "minTime": 1973,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "PuOr",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -50,
+        "customNumericValues": [
+          -25,
+          -10,
+          -5,
+          0,
+          5,
+          10,
+          25,
+          50
+        ],
+        "customNumericColors": [
+          null
+        ]
+      },
+      "variableId": 143048
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143048,
+        "display": {
+          "name": "Low-carbon energy",
+          "unit": "terawatt-hours",
+          "shortUnit": "TWh",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      171,
+      137,
+      13,
+      1,
+      23,
+      37
+    ]
+  },
+  {
+    "id": 4404,
+    "version": 11,
+    "slug": "annual-percentage-change-low-carbon",
+    "title": "Annual percentage change in low-carbon energy generation",
+    "subtitle": "Shown is the percentage change in renewable energy generation relative to the previous year. This is the sum of nuclear and renewable sources.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "minTime": "latest",
+    "hasMapTab": true,
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "RdBu",
+        "binningStrategy": "manual",
+        "customNumericMinValue": -50,
+        "customNumericValues": [
+          -25,
+          -10,
+          -5,
+          0,
+          5,
+          10,
+          25,
+          50
+        ],
+        "customNumericColors": [
+          null
+        ]
+      },
+      "variableId": 143047
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143047,
+        "display": {
+          "name": "Low-carbon energy",
+          "unit": "%",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      9,
+      171,
+      355,
+      3,
+      102,
+      13,
+      6,
+      137,
+      23
+    ]
+  },
+  {
+    "id": 4434,
+    "version": 9,
+    "slug": "fossil-fuels-per-capita",
+    "title": "Fossil fuel consumption per capita",
+    "subtitle": "Fossil fuel consumption per capita is measured as the average consumption of energy from coal, oil and gas per person.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "minTime": "latest",
+    "hasMapTab": true,
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlOrBr",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          5000,
+          10000,
+          20000,
+          40000,
+          60000,
+          80000,
+          100000
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143219
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143219,
+        "display": {
+          "name": "Fossil fuels per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "United Kingdom",
+      "Europe",
+      "India",
+      "China",
+      "United States",
+      "France",
+      "Australia",
+      "South Africa",
+      "Germany"
+    ],
+    "selectedEntityIds": [
+      1,
+      276,
+      137,
+      171,
+      13,
+      3,
+      23,
+      81,
+      6
+    ]
+  },
+  {
+    "id": 4435,
+    "version": 12,
+    "slug": "share-electricity-oil",
+    "title": "Share of electricity production from oil",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "Oranges",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          5,
+          10,
+          25,
+          40,
+          60,
+          80
+        ],
+        "customNumericColors": [
+          null,
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247974
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247974,
+        "display": {
+          "name": "Oil",
+          "unit": "%",
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "World",
+      "Sweden",
+      "United States",
+      "United Kingdom",
+      "China",
+      "India",
+      "Brazil"
+    ],
+    "selectedEntityIds": [
+      355,
+      10,
+      13,
+      1,
+      171,
+      137,
+      37
+    ]
+  },
+  {
+    "id": 4436,
+    "version": 6,
+    "slug": "low-carbon-energy-consumption",
+    "title": "Low-carbon energy consumption",
+    "subtitle": "Low-carbon energy is defined as the sum of nuclear and renewable sources. Renewable sources include hydropower, solar, wind, geothermal, wave and tidal and bioenergy. Traditional biofuels are not included.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "note": "Primary energy is calculated using the 'substitution method' which takes account of the inefficiencies energy production from fossil fuels.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "GnBu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          50,
+          100,
+          150,
+          200,
+          250,
+          500,
+          1000,
+          2500
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143230
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143230,
+        "display": {
+          "name": "Low-carbon energy",
+          "unit": "terawatt-hours",
+          "shortUnit": "TWh",
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      217,
+      273,
+      136
+    ]
+  },
+  {
+    "id": 4437,
+    "version": 7,
+    "slug": "primary-energy-nuclear",
+    "title": "Primary energy consumption from nuclear",
+    "subtitle": "Energy consumption is based on primary energy equivalents, rather than final electricity use.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "note": "'Primary energy’ refers to energy in its raw form, before conversion into electricity, heat or transport fuels. It is here measured in terms of 'input equivalents' via the substitution method: the amount of primary energy that would be required from fossil fuels to generate the same amount of electricity from nuclear.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "BuPu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          50,
+          100,
+          250,
+          500,
+          1000
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143225
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143225,
+        "display": {
+          "name": "Nuclear",
+          "unit": "terawatt-hours",
+          "shortUnit": "TWh",
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      3,
+      171,
+      10,
+      13,
+      6,
+      14
+    ]
+  },
+  {
+    "id": 4438,
+    "version": 6,
+    "slug": "primary-energy-renewables",
+    "title": "Primary energy consumption from renewables",
+    "subtitle": "Renewable energy includes hydropower, solar, wind, geothermal, wave and tidal and bioenergy. Traditional biofuels are not included. Energy consumption is based on primary energy equivalents, rather than final electricity use.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "note": "'Primary energy’ refers to energy in its raw form, before conversion into electricity, heat or transport fuels. It is here measured in terms of 'input equivalents' via the substitution method: the amount of primary energy that would be required from fossil fuels to generate the same amount of electricity from renewables.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlGn",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          100,
+          200,
+          400,
+          600,
+          800,
+          1000
+        ]
+      },
+      "variableId": 143226
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143226,
+        "display": {
+          "name": "Renewables",
+          "unit": "terawatt-hours",
+          "shortUnit": "TWh",
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      13,
+      1,
+      3,
+      137,
+      171
+    ]
+  },
+  {
+    "id": 4439,
+    "version": 6,
+    "slug": "primary-energy-hydro",
+    "title": "Primary energy consumption from hydropower",
+    "subtitle": "Energy consumption is based on primary energy equivalents, rather than final electricity use.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "note": "'Primary energy’ refers to energy in its raw form, before conversion into electricity, heat or transport fuels. It is here measured in terms of 'input equivalents' via the substitution method: the amount of primary energy that would be required from fossil fuels to generate the same amount of electricity from hydropower.",
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "GnBu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          100,
+          200,
+          400,
+          600,
+          800,
+          1000
+        ]
+      },
+      "variableId": 143224
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143224,
+        "display": {
+          "name": "Hydropower",
+          "unit": "terawatt-hours",
+          "shortUnit": "TWh",
+          "numDecimalPlaces": 0,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      3,
+      10,
+      44,
+      171
+    ]
+  },
+  {
+    "id": 4440,
+    "version": 7,
+    "slug": "primary-energy-consumption-from-solar",
+    "title": "Primary energy consumption from solar",
+    "subtitle": "Energy consumption is based on primary energy equivalents, rather than final electricity use.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "note": "'Primary energy’ refers to energy in its raw form, before conversion into electricity, heat or transport fuels. It is here measured in terms of 'input equivalents' via the substitution method: the amount of primary energy that would be required from fossil fuels to generate the same amount of electricity from solar.",
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlOrRd",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          5,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60
+        ],
+        "customNumericColors": [
+          null
+        ]
+      },
+      "variableId": 143227
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143227,
+        "display": {
+          "name": "Solar",
+          "unit": "terawatt-hours",
+          "shortUnit": "TWh",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      137,
+      171,
+      13,
+      1,
+      37,
+      9
+    ]
+  },
+  {
+    "id": 4441,
+    "version": 7,
+    "slug": "primary-energy-wind",
+    "title": "Primary energy consumption from wind",
+    "subtitle": "Energy consumption is based on primary energy equivalents, rather than final electricity use.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "note": "'Primary energy’ refers to energy in its raw form, before conversion into electricity, heat or transport fuels. It is here measured in terms of 'input equivalents' via the substitution method: the amount of primary energy that would be required from fossil fuels to generate the same amount of electricity from wind.",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "PuBuGn",
+        "binningStrategy": "equalInterval"
+      },
+      "variableId": 143228
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143228,
+        "display": {
+          "name": "Wind",
+          "unit": "terawatt-hours",
+          "shortUnit": "TWh",
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      137,
+      171,
+      95,
+      9,
+      1,
+      37
+    ]
+  },
+  {
+    "id": 4443,
+    "version": 12,
+    "slug": "electricity-fossil-fuels",
+    "title": "Electricity generation from fossil fuels",
+    "subtitle": "Electricity generation from coal, oil and gas sources combined.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "YlOrBr",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          50,
+          100,
+          200,
+          400,
+          600,
+          800,
+          1000
+        ],
+        "customNumericColors": [
+          null,
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247947
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247947,
+        "display": {
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "United States",
+      "Canada",
+      "United Kingdom",
+      "Spain",
+      "Japan",
+      "Germany"
+    ],
+    "selectedEntityIds": [
+      13,
+      44,
+      1,
+      9,
+      14,
+      6
+    ]
+  },
+  {
+    "id": 4444,
+    "version": 12,
+    "slug": "electricity-coal",
+    "title": "Electricity generation from coal",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "minTime": 1985,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "Oranges",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          25,
+          50,
+          100,
+          250,
+          500,
+          1000
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247945
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247945,
+        "display": {
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "United States",
+      "India",
+      "South Africa",
+      "Japan",
+      "Germany",
+      "Sweden"
+    ],
+    "selectedEntityIds": [
+      13,
+      137,
+      81,
+      14,
+      6,
+      10
+    ]
+  },
+  {
+    "id": 4445,
+    "version": 12,
+    "slug": "electricity-oil",
+    "title": "Electricity generation from oil",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "Reds",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          2.5,
+          5,
+          10,
+          25,
+          50,
+          100
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247952
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247952,
+        "display": {
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "France",
+      "Australia",
+      "Brazil",
+      "Sweden",
+      "South Africa",
+      "South Korea"
+    ],
+    "selectedEntityIds": [
+      3,
+      23,
+      37,
+      10,
+      81,
+      127
+    ]
+  },
+  {
+    "id": 4446,
+    "version": 12,
+    "slug": "electricity-gas",
+    "title": "Electricity generation from gas",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "Purples",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          10,
+          25,
+          50,
+          100,
+          250,
+          500,
+          1000
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247948
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247948,
+        "display": {
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Brazil",
+      "United Kingdom",
+      "Germany",
+      "Spain",
+      "South Korea",
+      "Belgium"
+    ],
+    "selectedEntityIds": [
+      37,
+      1,
+      6,
+      9,
+      127,
+      4
+    ]
+  },
+  {
+    "id": 4447,
+    "version": 12,
+    "slug": "low-carbon-electricity",
+    "title": "Electricity generation from low-carbon sources",
+    "subtitle": "Low-carbon electricity is the sum of electricity generation from nuclear and renewable sources. Renewable sources include hydropower, solar, wind, geothermal, bioenergy, wave and tidal.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "BuGn",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          25,
+          50,
+          100,
+          250,
+          500,
+          1000,
+          2500
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247950
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247950,
+        "display": {
+          "name": "Low-carbon electricity",
+          "unit": "terawatt-hours",
+          "shortUnit": "TWh",
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "China",
+      "India",
+      "Spain",
+      "United States",
+      "Canada",
+      "France",
+      "Sweden"
+    ],
+    "selectedEntityIds": [
+      171,
+      137,
+      9,
+      13,
+      44,
+      3,
+      10
+    ]
+  },
+  {
+    "id": 4448,
+    "version": 12,
+    "slug": "electricity-renewables",
+    "title": "Electricity generation from renewables",
+    "subtitle": "Renewable sources include hydropower, solar, wind, geothermal, bioenergy, wave and tidal.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "GnBu",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          10,
+          25,
+          50,
+          100,
+          250,
+          500,
+          1000
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247955
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247955,
+        "display": {
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Spain",
+      "France",
+      "India",
+      "Brazil",
+      "United Kingdom",
+      "Denmark"
+    ],
+    "selectedEntityIds": [
+      9,
+      3,
+      137,
+      37,
+      1,
+      161
+    ]
+  },
+  {
+    "id": 4449,
+    "version": 5,
+    "slug": "fossil-fuel-primary-energy",
+    "title": "Fossil fuel consumption",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "colorScale": {
+      "binningStrategy": "equalInterval"
+    },
+    "map": {
+      "time": "latest",
+      "colorScale": {
+        "baseColorScheme": "YlOrBr",
+        "binningStrategy": "manual",
+        "customNumericValues": [
+          500,
+          1000,
+          2500,
+          5000,
+          10000,
+          25000,
+          50000
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 143005
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 143005,
+        "display": {
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityIds": [
+      137,
+      81,
+      14,
+      23,
+      13,
+      1
+    ]
+  },
+  {
+    "id": 4451,
+    "version": 11,
+    "slug": "coal-electricity-per-capita",
+    "title": "Per capita generation of coal electricity",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "YlOrBr",
+        "binningStrategy": "manual",
+        "binningStrategyBinCount": 6,
+        "customNumericValues": [
+          50,
+          250,
+          500,
+          1000,
+          2500,
+          5000
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247959
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247959,
+        "display": {
+          "name": "Coal electricity per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "India",
+      "China",
+      "United States",
+      "United Kingdom",
+      "Japan"
+    ],
+    "selectedEntityIds": [
+      137,
+      171,
+      13,
+      1,
+      14
+    ]
+  },
+  {
+    "id": 4452,
+    "version": 11,
+    "slug": "oil-electricity-per-capita",
+    "title": "Per capita electricity generation from oil",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "OrRd",
+        "binningStrategy": "manual",
+        "binningStrategyBinCount": 6,
+        "customNumericValues": [
+          25,
+          50,
+          100,
+          250,
+          500,
+          1000
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247960
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247960,
+        "display": {
+          "name": "Oil electricity per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Japan",
+      "France",
+      "Spain",
+      "Brazil",
+      "United States"
+    ],
+    "selectedEntityIds": [
+      14,
+      3,
+      9,
+      37,
+      13
+    ]
+  },
+  {
+    "id": 4453,
+    "version": 11,
+    "slug": "fossil-electricity-per-capita",
+    "title": "Per capita electricity generation from fossil fuels",
+    "subtitle": "Electricity from fossil fuels is the sum of electricity generation from coal, oil and gas.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "Oranges",
+        "binningStrategy": "manual",
+        "binningStrategyBinCount": 6,
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          500,
+          1000,
+          2500,
+          5000,
+          7500,
+          10000
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247962
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247962,
+        "display": {
+          "name": "Fossil fuel electricity per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "United States",
+      "United Kingdom",
+      "India",
+      "China",
+      "South Africa",
+      "Australia"
+    ],
+    "selectedEntityIds": [
+      13,
+      1,
+      137,
+      171,
+      81,
+      23
+    ]
+  },
+  {
+    "id": 4454,
+    "version": 11,
+    "slug": "gas-electricity-per-capita",
+    "title": "Per capita electricity generation from gas",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "BuPu",
+        "binningStrategy": "manual",
+        "binningStrategyBinCount": 6,
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          500,
+          1000,
+          2500,
+          5000,
+          7500
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247961
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247961,
+        "display": {
+          "name": "Gas electricity per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Austria",
+      "United States",
+      "Canada",
+      "United Kingdom",
+      "Brazil",
+      "Norway"
+    ],
+    "selectedEntityIds": [
+      24,
+      13,
+      44,
+      1,
+      37,
+      102
+    ]
+  },
+  {
+    "id": 4455,
+    "version": 11,
+    "slug": "renewable-electricity-per-capita",
+    "title": "Per capita electricity generation from renewables",
+    "subtitle": "Renewable electricity is the sum of electricity from hydropower, solar, wind, geothermal, biomass, wave and tidal sources.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "YlGn",
+        "binningStrategy": "manual",
+        "binningStrategyBinCount": 6,
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          250,
+          500,
+          1000,
+          2500,
+          5000,
+          10000
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247963
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247963,
+        "display": {
+          "name": "Renewble electricity per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Spain",
+      "India",
+      "China",
+      "United States",
+      "South Korea",
+      "Vietnam"
+    ],
+    "selectedEntityIds": [
+      9,
+      137,
+      171,
+      13,
+      127,
+      84
+    ]
+  },
+  {
+    "id": 4456,
+    "version": 12,
+    "slug": "low-carbon-elec-per-capita",
+    "title": "Low-carbon electricity generation per capita",
+    "subtitle": "Low-carbon electricity is the sum of electricity generation from nuclear and renewable sources. Renewable sources include hydropower, solar, wind, geothermal, biomass, wave and tidal.",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "binningStrategy": "manual",
+        "binningStrategyBinCount": 6,
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          100,
+          250,
+          500,
+          1000,
+          5000,
+          10000,
+          25000
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247964
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247964,
+        "display": {
+          "name": "Low-carbon electricity per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "China",
+      "Japan",
+      "Germany",
+      "Spain",
+      "India",
+      "World"
+    ],
+    "selectedEntityIds": [
+      171,
+      14,
+      6,
+      9,
+      137,
+      355
+    ]
+  },
+  {
+    "id": 4457,
+    "version": 12,
+    "slug": "nuclear-electricity-per-capita",
+    "title": "Per capita electricity generation from nuclear",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "PuBuGn",
+        "binningStrategy": "manual",
+        "binningStrategyBinCount": 6,
+        "customNumericValues": [
+          100,
+          250,
+          500,
+          1000,
+          2500,
+          5000,
+          10000
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247965
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247965,
+        "display": {
+          "name": "Nuclear electricity per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "France",
+      "Germany",
+      "Japan",
+      "Sweden",
+      "United States",
+      "South Korea"
+    ],
+    "selectedEntityIds": [
+      3,
+      6,
+      14,
+      10,
+      13,
+      127
+    ]
+  },
+  {
+    "id": 4458,
+    "version": 12,
+    "slug": "hydro-electricity-per-capita",
+    "title": "Per capita electricity generation from hydropower",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "GnBu",
+        "binningStrategy": "manual",
+        "binningStrategyBinCount": 6,
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          100,
+          250,
+          500,
+          1000,
+          2500,
+          5000,
+          10000
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247968
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247968,
+        "display": {
+          "name": "Hydro electricity per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "France",
+      "Sweden",
+      "Brazil",
+      "China",
+      "United States",
+      "Norway"
+    ],
+    "selectedEntityIds": [
+      3,
+      10,
+      37,
+      171,
+      13,
+      102
+    ]
+  },
+  {
+    "id": 4459,
+    "version": 12,
+    "slug": "wind-electricity-per-capita",
+    "title": "Per capita electricity generation from wind",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "PuBuGn",
+        "binningStrategy": "manual",
+        "binningStrategyBinCount": 6,
+        "customNumericMinValue": 0,
+        "customNumericValues": [
+          10,
+          50,
+          100,
+          500,
+          1000,
+          2500,
+          5000
+        ],
+        "customNumericColors": [
+          null
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247967
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247967,
+        "display": {
+          "name": "Wind electricity per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "India",
+      "Germany",
+      "Netherlands",
+      "Denmark",
+      "United States",
+      "South Korea",
+      "Vietnam"
+    ],
+    "selectedEntityIds": [
+      137,
+      6,
+      5,
+      161,
+      13,
+      127,
+      84
+    ]
+  },
+  {
+    "id": 4460,
+    "version": 12,
+    "slug": "solar-electricity-per-capita",
+    "title": "Per capita electricity generation from solar",
+    "sourceDesc": "Our World in Data based on BP Statistical Review of World Energy & Ember",
+    "hideTitleAnnotation": true,
+    "hasMapTab": true,
+    "tab": "map",
+    "originUrl": "ourworldindata.org/energy",
+    "isPublished": true,
+    "yAxis": {
+      "min": 0
+    },
+    "map": {
+      "time": 2021,
+      "timeTolerance": 2,
+      "colorScale": {
+        "baseColorScheme": "YlOrRd",
+        "binningStrategy": "manual",
+        "binningStrategyBinCount": 6,
+        "customNumericValues": [
+          10,
+          25,
+          50,
+          100,
+          250,
+          500,
+          1000
+        ],
+        "equalSizeBins": true
+      },
+      "variableId": 247966
+    },
+    "dimensions": [
+      {
+        "property": "y",
+        "variableId": 247966,
+        "display": {
+          "name": "Solar electricity per capita",
+          "unit": "kilowatt-hours",
+          "shortUnit": "kWh",
+          "numDecimalPlaces": 0,
+          "tolerance": 2,
+          "includeInTable": true,
+          "tableDisplay": {
+            "hideAbsoluteChange": false,
+            "hideRelativeChange": false
+          }
+        }
+      }
+    ],
+    "selectedEntityNames": [
+      "Spain",
+      "Portugal",
+      "Australia",
+      "New Zealand",
+      "India",
+      "United States",
+      "South Africa"
+    ],
+    "selectedEntityIds": [
+      9,
+      95,
+      23,
+      106,
+      137,
+      13,
+      81
+    ]
+  }
+]
+//EMBEDDED_EXPLORER_GRAPHER_CONFIGS
+;
+const urlMigrationSpec = undefined;
+window.Explorer.renderSingleExplorerOnExplorerPage(explorerProgram, grapherConfigs, urlMigrationSpec);</script><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2D4V8S"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --></body></html>
